@@ -1,0 +1,16 @@
+README.md
+setup.py
+fdscraper/__init__.py
+fdscraper/preprocess/__init__.py
+fdscraper/preprocess/get_similar_sectors.py
+fdscraper/preprocess/utils.py
+fdscraper/score/__init__.py
+fdscraper/score/score.py
+fdscraper/score/utils.py
+fdscraper/scrape/__init__.py
+fdscraper/scrape/download.py
+fdscraper/scrape/utils.py
+fdscraper_chinmaykurade.egg-info/PKG-INFO
+fdscraper_chinmaykurade.egg-info/SOURCES.txt
+fdscraper_chinmaykurade.egg-info/dependency_links.txt
+fdscraper_chinmaykurade.egg-info/top_level.txt
