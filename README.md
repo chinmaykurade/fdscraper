@@ -28,18 +28,22 @@ from fdscraper.scrape.download import Companies
 driver_path = 'chromedriver.exe'
 ```   
 2. Downloading the financial data
-    A. Downloading from a list
+    1. Downloading from a list
+    
 ```python
         companies_list = ['my_list','ITC','HDFCBANK']
         comps = Companies(companies=companies_list,driver_path='chromedriver.exe')
         data_comps = comps.get_financials()
 ```
-    B. Downloading from a text file:
-    Create a text file in the following format:
+
+    2. Downloading from a text file:
+Create a text file in the following format:
+    
 ```
         my_list,TCS,HDFCBANK
 ```
-    And then download the data:
+
+And then download the data:
 ```
 file_path = 'input.txt' # Path to the input file
 comps = Companies(driver_path='chromedriver.exe')
