@@ -9,6 +9,9 @@ Fundamental analysis of any company includes the financial statement analysis
 of the respective company. This package helps to download the financial data 
 of companies listed on the NSE - India. Also, some tools are provided to 
 help analyse the financial data of the companies as well.
+
+# Installation - using pip
+ pip install fdscraper
  
 # Usage
 
