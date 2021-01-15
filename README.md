@@ -37,13 +37,13 @@ data_comps = comps.get_financials()
 ```
 
 - Downloading from a text file:  
-a. Create a text file in the following format:
+Create a text file in the following format:
     
 ```
 my_list,TCS,HDFCBANK
 ```
 
-b. And then download the data:
+And then download the data:
 ```python
 file_path = 'input.txt' # Path to the input file
 comps = Companies(driver_path='chromedriver.exe')
