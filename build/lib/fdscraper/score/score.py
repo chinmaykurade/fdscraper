@@ -1,14 +1,28 @@
 # -*- coding: utf-8 -*-
-from . import gss,download,gtc
+from . import download,gtc,prf
 
 
-def fscore(file_path,driver_path,out_path,data=None,ol=None):
-    all_data=download.from_file(file_path,driver_path,out_path)
-
-    ss,ol=gss.get_similar_sectors(out_path,5)
+class Score:
+    def __init__(self,data=None,companies=[],file_path=None,driver_path\
+                 = 'chromedriver.exe'):        
+        if(file_path!=None):
+            comps = download.Companies(driver_path=driver_path)
+            if(companies==None):
+                self.data = comps.get_financials(file_path=file_path)
+        elif(companies!=None):
+            comps = download.Companies(driver_path=driver_path)
+            comps.companies = companies
+            self.data = comps.get_financials()
+        else:
+            self.data = data
+        
+    def fundamental_score(self):
+        proc_data = prf.preprocess_financials(self.data)
+        cols = ['Company_name','DE','PE','ROE','Market Cap','Revenue Growth','PAT Growth','Score(10)']
     
-    cols = ['Company_name','DE','PE','ROE','Market Cap','Revenue Growth','PAT Growth','Score(10)']
-    
-    results = gtc(ol[0])[cols]
-    
-    return results
+        results = gtc(proc_data)[cols]
+        
+        return results
+        
+            
+            
