@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from . import features_by_sector
-from fdscraper import tqdm,os
+from . import features_by_sector,get_sector_features
+from fdscraper import tqdm,os,pd
 
 def get_similar_sectors(base_path,num_past_years):
     sector_list = []
@@ -37,3 +37,23 @@ def get_similar_sectors(base_path,num_past_years):
             out_list.append(dft)
 #         break
     return sector_list,out_list
+
+def preprocess_financials(data=None,num_past_years=5,base_path=None,\
+                          sname='Preprocessed data',verbose=0):
+    if(base_path!=None):
+        sectors = os.listdir(base_path)
+        out_df = pd.DataFrame()
+        for sector_name in tqdm(sectors):
+            sname = sector_name.split('.')[0]
+            if sname.split('_')[0] == 'all':
+                continue
+            if(verbose>0): print(sname)
+            dft = features_by_sector(base_path,sector_name,num_past_years)
+            dft['sector'] = sname
+            out_df = out_df.append(dft,ignore_index=True)
+        return dft
+    else:
+        dft = get_sector_features(data,num_past_years)
+        return dft
+            
+        
