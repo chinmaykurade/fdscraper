@@ -1,4 +1,4 @@
-# Indian Stocks- Fundamentals Data Downloader
+# Indian Stocks - Fundamental(Financials) Data Downloader
 
 A web scrapper using Selenium Python to download the fundamentals as well as price data from [Screener.in](https://www.screener.in)
 
