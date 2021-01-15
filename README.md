@@ -23,19 +23,25 @@ Google Chrome browser, support for other browsers will be added in future versio
 ## 1. Downloading the financials of companies
     
 1. Import the module and define the webdriver path
-
-        from fdscraper.scrape.download import Companies
-        driver_path = 'chromedriver.exe'
-    
+```python
+from fdscraper.scrape.download import Companies
+driver_path = 'chromedriver.exe'
+```   
 2. Downloading the financial data
     A. Downloading from a list
+```python
         companies_list = ['my_list','ITC','HDFCBANK']
         comps = Companies(companies=companies_list,driver_path='chromedriver.exe')
         data_comps = comps.get_financials()
+```
     B. Downloading from a text file:
     Create a text file in the following format:
+```
         my_list,TCS,HDFCBANK
+```
     And then download the data:
-        file_path = 'input.txt' # Path to the input file
-        comps = Companies(driver_path='chromedriver.exe')
-        data_comps = comps.get_financials(file_path=file_path)
+```
+file_path = 'input.txt' # Path to the input file
+comps = Companies(driver_path='chromedriver.exe')
+data_comps = comps.get_financials(file_path=file_path)
+```
