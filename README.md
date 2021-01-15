@@ -24,8 +24,8 @@ Google Chrome browser, support for other browsers will be added in future versio
     
 1. Import the module and define the webdriver path
 
-    from fdscraper.scrape.download import Companies
-    driver_path = 'chromedriver.exe'
+        from fdscraper.scrape.download import Companies
+        driver_path = 'chromedriver.exe'
     
 2. Downloading the financial data
     A. Downloading from a list
