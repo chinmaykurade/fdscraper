@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="fdscraper-chinmaykurade", # Replace with your own username
+    name="fdscraper", # Replace with your own username
     version="0.0.1",
     author="Chinmay Kurade",
     author_email="chinmay.v.kurade@gmail.com",
